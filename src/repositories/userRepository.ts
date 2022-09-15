@@ -1,4 +1,4 @@
-import { prisma } from "../database/database.js";
+import { prisma } from "../database/database";
 import { Users } from "@prisma/client";
 
 export async function findUserByEmail(email:string): Promise < Users | null> {

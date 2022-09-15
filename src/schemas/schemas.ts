@@ -6,7 +6,7 @@ const signUpSchema = joi.object<UserBodyData>({
   password: joi
   .string()
   .required(),
-  passwordConfirmation: joi.any().valid(joi.ref('password'))
+  passwordConfirmation: joi.any().valid(joi.ref('password')).required()
 });
 
 const signInSchema = joi.object<UserBodyData>({

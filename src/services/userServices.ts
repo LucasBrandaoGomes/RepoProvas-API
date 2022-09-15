@@ -1,4 +1,4 @@
-import * as userRepository from '../repositories/userRepository.js'
+import * as userRepository from '../repositories/userRepository'
 import bcrypt from "bcrypt";
 import  jwt  from 'jsonwebtoken';
 import { Users } from '@prisma/client';

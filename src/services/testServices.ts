@@ -44,3 +44,11 @@ export async function newTest(data:TestInsertData, categorieId:number, disciplin
 
     await testRepository.inserNewTest(dataSend)
 }
+
+export async function getAllTestsByDiscipline() {
+    return await testRepository.getTestsByDisciplines()
+}
+
+export async function getAllTestsByTeachers() {
+    return await testRepository.getTestsByDisciplines()
+}

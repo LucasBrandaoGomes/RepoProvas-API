@@ -50,5 +50,5 @@ export async function getAllTestsByDiscipline() {
 }
 
 export async function getAllTestsByTeachers() {
-    return await testRepository.getTestsByDisciplines()
+    return await testRepository.getTestsByTeachers()
 }

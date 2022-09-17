@@ -58,7 +58,7 @@ export async function getTestsByDisciplines(){
     })
 }
 
-async function getTestsByTeachers() {
+export async function getTestsByTeachers() {
     return await prisma.teachers.findMany({
       select: {
         name: true,

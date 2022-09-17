@@ -29,7 +29,7 @@ model Categories {
 
 model Tests {
   id                  Int                   @id @default(autoincrement())
-  name                String                @unique
+  name                String                
   pdfUrl              String
   categories          Categories            @relation(fields: [categorieId], references: [id])
   categorieId         Int

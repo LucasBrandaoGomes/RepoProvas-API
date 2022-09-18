@@ -100,6 +100,70 @@ describe("Test route POST /tests", () => {
     })    
 })
 
+describe('Test route GET /tests/disciplines', () => {
+    const newUser = createNewUser()
+    const newTest = createNewTest()
+
+    it("Get all tests grouping by terms and teachers, return status 200",async () => {
+        await supertest(app).post('/sign-up').send(newUser);
+        const signin = await supertest(app).post('/sign-in').send({email:newUser.email, password:"1234"});
+        const result = await supertest(app).get('/tests/disciplines').send().set('Authorization', 'Bearer ' + signin.text)
+        
+        expect(result.status).toBe(200)
+        expect(result.body).toBeInstanceOf(Array);
+    })
+
+    it("Get all tests grouping by terms and teachers without autorization token return status 401",async () => {
+        await supertest(app).post('/sign-up').send(newUser);
+        const signin = await supertest(app).post('/sign-in').send({email:newUser.email, password:"1234"});
+        const result = await supertest(app).get('/tests/disciplines').send()
+        
+        expect(result.status).toBe(401)
+    })
+
+    it("Get all tests grouping by terms and teachers with invalid token return status 401",async () => {
+        await supertest(app).post('/sign-up').send(newUser);
+        const signin = await supertest(app).post('/sign-in').send({email:newUser.email, password:"1234"});
+        const result = await supertest(app).get('/tests/disciplines').send().set('Authorization', 'Bearer ' + 'Invalid token')
+        
+        expect(result.status).toBe(401)
+    })
+
+
+})
+
+describe('Test route GET /tests/teachers', () => {
+    const newUser = createNewUser()
+    const newTest = createNewTest()
+
+    it("Get all tests grouping by terms and teachers, return status 200",async () => {
+        await supertest(app).post('/sign-up').send(newUser);
+        const signin = await supertest(app).post('/sign-in').send({email:newUser.email, password:"1234"});
+        const result = await supertest(app).get('/tests/teachers').send().set('Authorization', 'Bearer ' + signin.text)
+        
+        expect(result.status).toBe(200)
+        expect(result.body).toBeInstanceOf(Array);
+    })
+
+    it("Get all tests grouping by terms and teachers without autorization token return status 401",async () => {
+        await supertest(app).post('/sign-up').send(newUser);
+        const signin = await supertest(app).post('/sign-in').send({email:newUser.email, password:"1234"});
+        const result = await supertest(app).get('/tests/teachers').send()
+        
+        expect(result.status).toBe(401)
+    })
+
+    it("Get all tests grouping by terms and teachers with invalid token return status 401",async () => {
+        await supertest(app).post('/sign-up').send(newUser);
+        const signin = await supertest(app).post('/sign-in').send({email:newUser.email, password:"1234"});
+        const result = await supertest(app).get('/tests/teachers').send().set('Authorization', 'Bearer ' + 'Invalid token')
+        
+        expect(result.status).toBe(401)
+    })
+
+
+})
+
 afterAll( async () => {
     await prisma.$disconnect()
 })

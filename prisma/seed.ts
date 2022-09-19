@@ -1,5 +1,4 @@
 import { prisma } from "../src/database/database";
-import { createNewUser } from '../src/factories/userFactory';
 
 async function main() {
   await prisma.terms.createMany({

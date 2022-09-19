@@ -3,9 +3,8 @@
 # <p align = "center"> Projeto RepoProvas </p>
 
 <p align = "center">
-   <img src="https://img.shields.io/badge/author-Lucas Brandão-4dae71?style=flat-square" />
+   <img src="https://github.com/LucasBrandaoGomes/RepoProvas-API/blob/d737880743d85a46126bc65d082c90f22f4709bb/img/drivenpass-logo.png" />
 </p>
-
 
 ##  :clipboard: Descrição
 

@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-export function createNewUser () {
+export async function createNewUser () {
   const user = {
     email: faker.internet.email(),
     password: "1234",

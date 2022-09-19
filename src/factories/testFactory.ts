@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-export function createNewTest () {
+export async function createNewTest () {
   const test = {
     name: faker.random.alphaNumeric(),
     pdfUrl: faker.internet.url(),

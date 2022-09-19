@@ -8,7 +8,7 @@
 
 ##  :clipboard: Descrição
 
-Back-end da aplicação RepoProvas, que tem por finalidade a criação de um repositório de provas e a organização destas por periodos, disciplinas e professores. 
+Back-end da aplicação RepoProvas, que tem por finalidade a criação de um repositório de provas e a organização destas por periodos, disciplinas e professores.\n
 Feramentas e tecnologias utilizadas: Heroku, PostgresSQL, TypeScript, Prisma, Node JS, EXPRESS, JWT
 ***
 
